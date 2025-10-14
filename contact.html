@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ติดต่อ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ส่วนเมนูนำทาง (Navigation) -->
+    <nav class="navbar">
+        <div class="logo">
+            <h1>My Portfolio</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">หน้าหลัก</a></li>
+            <li><a href="education.html">การศึกษา</a></li>
+            <li><a href="portfolio.html">ผลงาน</a></li>
+            <li><a href="activity.html">กิจกรรม</a></li>
+            <li><a href="contact.html" class="active">ติดต่อ</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- ส่วนหลัก (Main Content) -->
+    <main>
+        <!-- Poster-style Header -->
+        <section class="poster-hero">
+            <div class="container">
+                <div class="poster-content">
+                    <div class="poster-left">
+                        <h1 class="poster-title"><span>CON</span><span>TACT</span></h1>
+                        <div class="poster-subtitle">ติดต่อผม</div>
+                        <div class="poster-meta">พร้อมร่วมงาน พูดคุยโปรเจค และรับคำแนะนำ</div>
+                        
+                    </div>
+                    <div class="poster-right">
+                        <div class="poster-box">
+                            <h3>ช่องทางด่วน</h3>
+                            <p>อีเมล • โทรศัพท์ • โซเชียล</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>ข้อมูลการติดต่อ</h2>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>อีเมล</h3>
+                                <p>0653131355xpoik@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>โทรศัพท์</h3>
+                                <p>065-313-1369</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>ที่อยู่</h3>
+                                <p>มหาสารคาม, ประเทศไทย</p>
+                            </div>
+                        </div>
+                        <div class="social-contact">
+                            
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h2>ส่งข้อความถึงผม</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">ชื่อ-นามสกุล</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">อีเมล</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">หัวข้อ</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">ข้อความ</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">ส่งข้อความ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map-section">
+            <div class="container">
+                <h2 class="section-title">แผนที่</h2>
+                <div class="map-container">
+                    <!-- ใส่แผนที่ Google Maps หรือแผนที่อื่นๆ ที่นี่ -->
+                    <!-- แก้ไข iframe ให้ใช้ embed แทน -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.4052603175384!2d102.87169631482!3d16.253017088759693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3122872cfcb9c867%3A0x5a1f359670677066!2sGotji%20art%20animate!5e0!3m2!1sth!2sth!4v1652345678901!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ส่วนท้าย (Footer) -->
+     <footer>
+        <div class="footer-content">
+            <div class="footer-section about-section">
+                <h3>เกี่ยวกับผม</h3>
+                <p>นักพัฒนาเกมและนักออกแบบที่มีความหลงใหลในการสร้างสรรค์ประสบการณ์ดิจิทัลที่น่าประทับใจ</p>
+            </div>
+            <div class="footer-section links">
+                <h3>ลิงก์ด่วน</h3>
+                <ul>
+                    <li><a href="index.html">หน้าหลัก</a></li>
+                    <li><a href="education.html">การศึกษา</a></li>
+                    <li><a href="portfolio.html">ผลงาน</a></li>
+                    <li><a href="activity.html">กิจกรรม</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
+            </div>
+                <div class="footer-section contact">
+                    <h3>ติดต่อ</h3>
+                    <p><i class="fas fa-envelope"></i> 0653131355xpoik@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 065-313-1396</p>
+                    <div class="social-icons">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/thanapat.kinabun/" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/thanapatkinabun/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 [Thanapat Kinabun] | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
