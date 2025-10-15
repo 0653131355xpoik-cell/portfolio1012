@@ -1,0 +1,993 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+}
+
+:root {
+    --primary-color: #3b82f6;
+    --secondary-color: #60a5fa;
+    --accent-color: #2563eb;
+    --text-color: #e5e7eb;
+    --light-text: #9ca3af;
+    --bg-color: #111827;
+    --light-bg: #1f2937;
+    --dark-bg: #0f172a;
+    --border-color: #374151;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+.navbar {
+    background-color: var(--dark-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+    background-color: var(--light-bg);
+}
+
+.section-title::after {
+    background-color: var(--primary-color);
+}
+
+.footer-content {
+    background-color: var(--dark-bg);
+}
+
+.footer-bottom {
+    background-color: #0a0f1a;
+}
+
+.skill-tag {
+    background-color: var(--accent-color);
+}
+
+.timeline-content {
+    background-color: var(--light-bg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary-color);
+}
+
+/* ===== NAVBAR ===== */
+/* ปรับปรุง navbar ให้เลื่อนในแนวซ้ายขวาได้ดีขึ้น */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    z-index: 1000;
+    white-space: nowrap;
+    /* ❌ ลบออก */
+    /* overflow-x: hidden; */
+}
+
+/* ให้ navbar scroll ได้ถ้าเมนูยาวเกิน */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;        /* ให้เลื่อนแนวนอนได้ */
+    overflow-y: hidden;      /* ไม่ให้เลื่อนแนวตั้ง */
+    white-space: nowrap;     /* ไม่ให้ตัดบรรทัด */
+    flex: 1;                 /* กินพื้นที่ที่เหลือย */
+    width: auto;             /* ยกเลิก 50% เดิม */
+    scrollbar-width: thin;   /* Firefox: แสดง scrollbar แบบบาง */
+    scrollbar-color: var(--primary-color) transparent; /* สี scrollbar */
+}
+
+/* Chrome / Safari */
+.nav-links::-webkit-scrollbar {
+    height: 6px; /* ความสูง scrollbar */
+}
+.nav-links::-webkit-scrollbar-track {
+    background: transparent;
+}
+.nav-links::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 3px;
+}
+
+.nav-links li {
+    flex: 0 0 auto; /* กันเมนูหด */
+    white-space: nowrap;
+}
+
+/* เพิ่ม padding ให้กับลิงก์เพื่อให้กดง่ายขึ้น */
+.nav-links li a {
+    padding: 0.7rem 1.2rem;
+    display: block;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* ให้ navbar scroll ได้ถ้าเมนูยาวเกิน */
+.nav-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;    /* เปิดสกรอลล์แนวนอน */
+    scrollbar-width: none; /* ซ่อน scrollbar บน Firefox */
+    -ms-overflow-style: none; /* ซ่อน scrollbar บน IE/Edge */
+    white-space: nowrap; /* เพิ่มเพื่อไม่ให้ตัดบรรทัด */
+    width: 50%;
+}
+
+.nav-links::-webkit-scrollbar {
+    display: none; /* ซ่อน scrollbar บน Chrome, Safari */
+}
+
+.nav-links li {
+    flex: 0 0 auto; /* กันเมนูหด */
+    white-space: nowrap; /* เพิ่มเพื่อไม่ให้ตัดบรรทัด */
+}
+
+.nav-links li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap; /* เพิ่มเพื่อไม่ให้ตัดบรรทัด */
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: var(--transition);
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px - 300px); /* Navbar height + Footer height */
+}
+
+/* ===== HERO SECTION ===== */
+.hero { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 60px 20px; 
+    background: #f9f9f9; 
+} 
+
+.hero-content { 
+    display: flex; 
+    flex-wrap: wrap; /* ให้ responsive เวลาหน้าจอเล็ก */ 
+    align-items: center; 
+    justify-content: space-between; 
+    max-width: 1200px; 
+    width: 100%; 
+} 
+
+.hero-text { 
+    flex: 1; 
+    min-width: 280px; 
+    padding-right: 40px; 
+} 
+
+.hero-text h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 15px; 
+    color: #1e3a8a; 
+} 
+
+.hero-text h2 { 
+    font-size: 1.5rem; 
+    margin-bottom: 20px; 
+    color: #2563eb; 
+} 
+
+.hero-text p { 
+    font-size: 1rem; 
+    margin-bottom: 30px; 
+    line-height: 1.6; 
+    color: #444; 
+} 
+
+.cta-buttons { 
+    display: flex; 
+    gap: 15px; /* ระยะห่างระหว่างปุ่ม */ 
+    flex-wrap: wrap; /* กันกรณีจอแคบ */ 
+} 
+
+.btn { 
+    padding: 12px 25px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s ease; 
+    display: inline-block; 
+    white-space: nowrap; /* ป้องกันตัดบรรทัด */ 
+} 
+
+.primary-btn { 
+    background: #2563eb; 
+    color: #fff; 
+} 
+
+.primary-btn:hover { 
+    background: #1e40af; 
+} 
+
+.secondary-btn { 
+    border: 2px solid #2563eb; 
+    color: #2563eb; 
+} 
+
+.secondary-btn:hover { 
+    background: #2563eb; 
+    color: #fff; 
+} 
+
+.hero-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 5px solid #2563eb;
+  overflow: hidden; /* ตัดเกินออก */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ---- ปรับขนาดและตำแหน่งรูป ---- */
+  transform: scale(1.2) translateY(5px) translateX(-5px);
+  /* scale() = ซูมรูป
+     translateY() = เลื่อนขึ้น-ลง (+ ลง, - ขึ้น)
+     translateX() = เลื่อนซ้าย-ขวา (+ ขวา, - ซ้าย) */
+}
+
+
+
+
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    padding: 5rem 0;
+}
+
+.about-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.skills {
+    margin-top: 2rem;
+}
+
+.skills h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    background-color: var(--light-bg);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--light-text);
+}
+
+/* ===== EDUCATION PAGE ===== */
+.education {
+    padding: 5rem 0;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    left: 0;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+/* ปรับแต่ง timeline-content ให้อ่านง่ายขึ้น */
+.timeline-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;       /* จำกัดความกว้าง */
+    word-wrap: break-word;  /* บังคับตัดคำ */
+    white-space: normal;    /* ให้ตัดบรรทัดตามปกติ */
+    line-height: 1.6;       /* ระยะห่างบรรทัดให้อ่านง่าย */
+}
+
+.timeline-content h3, 
+.timeline-content h4, 
+.timeline-content p {
+    margin-bottom: 0.8rem;  /* เพิ่มระยะห่างแต่ละบรรทัด */
+    white-space: normal;    /* ยกเลิก white-space: nowrap */
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    line-height: 1.4;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+/* เพิ่ม style สำหรับ bullet list */
+.timeline-content ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.timeline-content ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* ปรับแต่ง p ทั่วไปให้อ่านง่ายขึ้น */
+p {
+    line-height: 1.6;
+    white-space: normal;
+}
+
+h3, h4 {
+    line-height: 1.4;
+    white-space: normal;
+}
+
+.timeline-institution {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-period {
+    color: var(--light-text);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.certificates {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+}
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.certificate-card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.certificate-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.certificate-card p {
+    color: var(--light-text);
+}
+
+/* ===== PORTFOLIO PAGE ===== */
+.portfolio {
+    padding: 5rem 0;
+}
+
+.portfolio-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-item {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-img {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.portfolio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(37, 99, 235, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    transform: translateY(100%);
+    transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+    font-size: 1.2rem;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 5%;
+}
+
+.footer-section {
+    padding: 0 15px;
+}
+
+.footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    color: var(--accent-color);
+}
+
+.footer-section p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: white;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem 5%;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .about-content, .skills-content, .education-content, .experience-content {
+        flex-direction: column;
+    }
+    
+    .about-image, .skills-image {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    
+    .about-text, .skills-text {
+        width: 100%;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-text {
+        margin-top: 2rem;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-menu li {
+        margin: 0.5rem 0;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form, .contact-info {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .header-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* แก้ไข line-height และ max-width สำหรับข้อความเนื้อหาทั่วไป */
+p {
+    line-height: 1.6;
+    max-width: 100%;
+    white-space: normal;
+}
+
+h3, h4 {
+    line-height: 1.4;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ hero section */
+.hero-text p {
+    line-height: 1.6;
+    max-width: 800px;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ about section */
+.about-text p {
+    line-height: 1.6;
+    max-width: 800px;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ skills section */
+.skills h3 {
+    line-height: 1.4;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ page header */
+.page-header p {
+    line-height: 1.6;
+    max-width: 800px;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ timeline content */
+/* Timeline ปรับใหม่ */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+/* Dot */
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+/* Content */
+.timeline-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 350px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+/* Responsive: หน้าจอเล็ก timeline ซ้อนกันทั้งหมด */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 20px; /* เปลี่ยนเส้นกลางเป็นซ้าย */
+    }
+    .timeline-item {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 20px;
+        margin-bottom: 2rem;
+    }
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+    .timeline-dot {
+        left: 0;
+        right: auto;
+    }
+    .timeline-content {
+        max-width: 100%;
+    }
+}
+
+
+/* แก้ไขสำหรับ certificate card */
+.certificate-card h3 {
+    line-height: 1.4;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.certificate-card p {
+    line-height: 1.6;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ portfolio overlay */
+.portfolio-overlay h3 {
+    line-height: 1.4;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.portfolio-overlay p {
+    line-height: 1.6;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* แก้ไขสำหรับ footer section */
+.footer-section h3 {
+    line-height: 1.4;
+    max-width: 100%;
+    white-space: normal;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    max-width: 100%;
+    white-space: normal;
+}
+
+/* เพิ่ม container สำหรับจำกัดความกว้างของเนื้อหา */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Media queries สำหรับ responsive design */
+@media screen and (max-width: 768px) {
+    p, .hero-text p, .about-text p, .page-header p {
+        max-width: 100%;
+    }
+}
